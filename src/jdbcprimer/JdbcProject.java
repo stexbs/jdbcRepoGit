@@ -16,19 +16,26 @@ public class JdbcProject {
 			Connection konekcija = null;
 			Statement statement = null;
 			
-			try {
-				konekcija = MetodeJdbc.uspostaviKonekciju("kursevi");
-				System.out.println("Usposatvio konekciju");
+			
+				try {
+					konekcija = MetodeJdbc.uspostaviKonekciju("kursevi");
+					
+					System.out.println("Usposatvio konekciju");
+					String query = "INSERT INTO courses VALUES(5,'css',7800)";
+					statement = konekcija.createStatement();
+					statement.execute(query);
+					
+					System.out.println("Uspesan unos!");
+					
+				} catch (SQLException e) {
+					System.out.println("Nema konekcije");
+					e.printStackTrace();
+				}
 				
-				String query = "INSERT INTO courses VALUES(null,'css',7800)";
-				statement = konekcija.createStatement();
-				statement.execute(query);
 				
-				System.out.println("Uspesan unos!");
 				
-			} catch (SQLException e) {
-				System.out.println("Nema konekcije!");
-			}
+				
+		
 		
 		
 		
