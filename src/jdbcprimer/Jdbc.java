@@ -6,6 +6,7 @@ public class Jdbc {
 		// TODO Auto-generated method stub
 
 		System.out.println("Ovde cemo raditi jdbc");
+		System.out.println("bla bla bla");
 		
 	}
 
