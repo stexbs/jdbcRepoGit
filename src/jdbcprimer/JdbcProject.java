@@ -1,4 +1,4 @@
-package jdbc;
+package jdbcprimer;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -33,5 +33,5 @@ public class JdbcProject {
 		
 		
 		
-
+	}
 	}
