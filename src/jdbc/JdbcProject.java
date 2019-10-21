@@ -20,11 +20,11 @@ public class JdbcProject {
 			
 		scanner.close();
 		
+		
+		
+		
+		
 		metode.izmeniCenuKursa(imeKursa, cena);
-		
-		
-		
-		
 		
 		
 		

@@ -20,13 +20,13 @@ public class MetodeJdbc {
 	}
 
 	
-	public boolean ubaciUtabeluKursevi(String imeKursa, String cena) {
+	public boolean ubaciUtabeluKursevi(String imeKursa, int cena) {
 		
 		
 		Connection konekcija = null;
 		PreparedStatement statement = null;
 		
-		int cenaZaUpis = Integer.parseInt(cena);
+		
 		
 		try {
 			konekcija = uspostaviKonekciju("kursevi");
@@ -35,7 +35,7 @@ public class MetodeJdbc {
 			String query = "INSERT INTO courses VALUES(null,?,?)";
 			statement = konekcija.prepareStatement(query);
 				statement.setString(1, imeKursa);
-				statement.setInt(2, cenaZaUpis);
+				statement.setInt(2, cena);
 			statement.execute();
 			System.out.println("Uspesno ubacen kurs!");
 			return true;
