@@ -3,6 +3,7 @@ package controller;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -95,6 +96,65 @@ public class MetodeJdbc {
 		}
 		
 	}
+	
+	
+	public void prikaziSveKurseve () {
+		
+		Connection konekcija = null;
+		PreparedStatement pst = null;
+		ResultSet res = null; 
+		
+		
+		try {
+			konekcija = uspostaviKonekciju("kursevi");
+			System.out.println("Konekcija uspostavljena");
+			
+			String query = "select * from courses";
+			pst = konekcija.prepareStatement(query);
+			res = pst.executeQuery();
+			
+			while (res.next()) {
+				
+				int id = res.getInt("id_courses");
+				String ime = res.getString("ime_kursa");
+				double cena =	res.getDouble("cena");
+				System.out.println(id + " " + ime + " " + cena);
+				
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				res.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				pst.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				konekcija.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
