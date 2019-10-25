@@ -2,6 +2,7 @@ package jdbc;
 
 import java.util.Scanner;
 import controller.MetodeJdbc;
+import model.Kurs;
 
 public class JdbcProject {
 
@@ -10,21 +11,14 @@ public class JdbcProject {
 
 		MetodeJdbc metode = new MetodeJdbc();
 		
-		Scanner scanner = new Scanner(System.in);	
 		
-			System.out.println("Unesite ime kursa: ");
-			String imeKursa = scanner.nextLine();
-			
-			System.out.println("Unesite cenu: ");
-			int cena = Integer.parseInt(scanner.nextLine());
-			
-		scanner.close();
+		Kurs k = metode.vratiKursPoId(3);
+		
+		System.out.println("Id: " + k.getIdKursa());
+		System.out.println("Ime: " + k.getImeKursa());
+		System.out.println("Cena: " + k.getCena());
 		
 		
-		
-		
-		
-		metode.izmeniCenuKursa(imeKursa, cena);
 		
 		
 		
@@ -32,4 +26,3 @@ public class JdbcProject {
 	}
 
 }
-
