@@ -1,9 +1,6 @@
 package jdbc;
 
-<<<<<<< HEAD
-=======
 import java.util.ArrayList;
->>>>>>> branch 'master' of https://github.com/stexbs/jdbcRepoGit.git
 import java.util.List;
 import java.util.Scanner;
 import controller.MetodeJdbc;
@@ -37,8 +34,6 @@ public class JdbcProject {
 		 * System.out.println("MATBR: " + user.getMaticniBroj()); }else {
 		 * System.out.println("Ne postoji taj user!"); }
 		 */
-<<<<<<< HEAD
-=======
 		
 		
 		/*
@@ -87,21 +82,10 @@ public class JdbcProject {
 			
 
 
->>>>>>> branch 'master' of https://github.com/stexbs/jdbcRepoGit.git
 		
 		
-		List<User> lstUsers = metode.vratiSveUsere();
 		
-<<<<<<< HEAD
-		for(User u: lstUsers) {
-			System.out.println("ID: " +u.getIdUser());
-			System.out.println("USER NAME: " + u.getUserName());
-			System.out.println("PASSWORD: " + u.getPassword());
-			System.out.println("MATBR: " + u.getMaticniBroj());
-		}
-=======
 		
->>>>>>> branch 'master' of https://github.com/stexbs/jdbcRepoGit.git
 		
 		
 
